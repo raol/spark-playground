@@ -6,7 +6,7 @@ import org.apache.spark.sql.SparkSession
 
 object HelloWorld {
   def main(args: Array[String]): Unit = {
-    val logger = Logger.getRootLogger;
+    val logger = Logger.getRootLogger
 
     val conf = new SparkConf()
       .setAppName(HelloWorld.getClass.getName)
@@ -17,8 +17,8 @@ object HelloWorld {
 
     var df = spark.read
       .format("csv")
-      .option("header", true)
-      .option("inferSchema", true)
+      .option("header", value = true)
+      .option("inferSchema", value = true)
       .load("/data/books.csv")
 
     logger.info("Loaded dataset")
